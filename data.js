@@ -59,10 +59,14 @@ const SITE_DATA = {
       { value: "450+", label: "Rendezvény", highlight: false },
       { value: "5.0 ★", label: "Elégedettség", highlight: true }
     ],
+    cardBadge: "Prémium Technika & Hangulat",
+    cardSubtitle: "RCF & Electro-Voice Hangrendszer",
+    cardImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
     cardFeatures: [
-      "Pontos érkezés, rendezett elegáns pult",
-      "Vezeték nélküli mikrofonok a köszöntőkhöz",
-      "Személyre szabott zenei ív a vendégek ízlésére"
+      "Pontos érkezés, rendezett és elegáns DJ pult",
+      "Vezeték nélküli mikrofonok szertartáshoz és köszöntőkhöz",
+      "Személyre szabott zenei ív a vendégek ízlésére",
+      "Kötetlen, barátságos telefonos megbeszélés"
     ]
   },
 
