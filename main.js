@@ -69,7 +69,7 @@ function renderNav(data) {
             <div class="nav-logo-text font-display">
               ${profile.stageName} <span style="color:#d97706;">•</span>
             </div>
-            <div class="nav-logo-sub">${profile.name} • ${profile.title}</div>
+            <div class="nav-logo-sub">${profile.title}</div>
           </div>
         </a>
 
@@ -542,7 +542,7 @@ function renderFooter(data) {
       <footer class="footer">
         <div class="container">
           <div class="footer-logo font-display">${profile.stageName}</div>
-          <div style="color: #9ca3af; margin-bottom: 10px; font-size: 14px;">${profile.name} • ${profile.title}</div>
+          <div style="color: #9ca3af; margin-bottom: 10px; font-size: 14px;">${profile.title} • <span style="color:#f59e0b;">${profile.domain}</span></div>
           
           <div class="social-links-bar">
             <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook">
@@ -554,7 +554,7 @@ function renderFooter(data) {
           </div>
 
           <div style="margin-top: 14px; color: #d1d5db; font-size: 14px;">
-            Telefon: <a href="tel:${profile.phoneRaw}" style="color:#f59e0b; font-weight:700;">${profile.phone}</a> • E-mail: ${profile.email}
+            Telefon: <a href="tel:${profile.phoneRaw}" style="color:#f59e0b; font-weight:700;">${profile.phone}</a> • E-mail: <a href="mailto:${profile.email}" style="color:#f59e0b;">${profile.email}</a> • Web: <span style="color:#f59e0b;">${profile.domain}</span>
           </div>
           <div style="margin-top: 18px; font-size: 12px; color: #6b7280;">
             &copy; ${new Date().getFullYear()} ${profile.name}. Minden jog fenntartva.

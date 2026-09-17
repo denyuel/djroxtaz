@@ -10,11 +10,14 @@ const SITE_DATA = {
   // Alapvető profil és elérhetőségek
   profile: {
     name: "Nyári Zsolt",
-    stageName: "DJ ROXTAZ",
-    title: "Rendezvény és Esküvői DJ",
+    stageName: "Nyári Zsolt",
+    brandTitle: "Nyári Zsolt - Esküvői és Rendezvény Dj",
+    title: "Esküvői és Rendezvény DJ",
+    domain: "www.nyarizsolti.hu",
+    domainUrl: "https://www.nyarizsolti.hu",
     phone: "+36 30 123 4567",
     phoneRaw: "+36301234567",
-    email: "info@djroxtaz.hu",
+    email: "info@nyarizsolti.hu",
     whatsappUrl: "https://wa.me/36301234567",
     location: "Budapest & Országosan",
     workingHours: "Hétfőtől vasárnapig hívható"
@@ -43,8 +46,8 @@ const SITE_DATA = {
   hero: {
     seasonBadge: "2025 / 2026 Szezon Egyeztetés",
     greeting: "Nyári Zsolt vagyok,",
-    headline: "Rendezvény & Esküvői DJ",
-    subBrand: "( DJ ROXTAZ )",
+    headline: "Esküvői és Rendezvény DJ",
+    subBrand: "www.nyarizsolti.hu",
     description: "Felejthetetlen pillanatok és kifogástalan zenei élmény a megható szertartástól a hajnalig tartó tombolásig. Professzionális hang- és fénytechnika, közvetlen hozzáállás.",
     primaryCta: {
       text: "Hívj fel és beszéljük meg!",
