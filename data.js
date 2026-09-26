@@ -44,13 +44,13 @@ const SITE_DATA = {
 
   // Hero (Nyitó) szekció
   hero: {
-    seasonBadge: "2025 / 2026 Szezon Egyeztetés",
-    greeting: "Nyári Zsolt vagyok,",
-    headline: "Esküvői és Rendezvény DJ",
-    subBrand: "www.nyarizsolti.hu",
-    description: "Felejthetetlen pillanatok és kifogástalan zenei élmény a megható szertartástól a hajnalig tartó tombolásig. Professzionális hang- és fénytechnika, közvetlen hozzáállás.",
+    seasonBadge: "2025 / 2026 Esküvői & Rendezvény Szezon",
+    tagline: "Nyári Zsolt • Esküvői & Rendezvény DJ",
+    title: "A zene, ami felejthetetlenné teszi a",
+    titleHighlight: "Nagy Napot.",
+    description: "Több mint egy évtizedes tapasztalat, prémium RCF hangtechnika, intelligens látványfények és a tánctér pulzusára épülő zenei élmény a megható szertartástól a hajnalig tartó fergeteges buliig.",
     primaryCta: {
-      text: "Hívj fel és beszéljük meg!",
+      text: "Hívj és beszéljük meg!",
       action: "tel:+36301234567"
     },
     secondaryCta: {
@@ -58,19 +58,17 @@ const SITE_DATA = {
       action: "https://wa.me/36301234567"
     },
     stats: [
-      { value: "12+", label: "Év tapasztalat", highlight: true },
-      { value: "450+", label: "Rendezvény", highlight: false },
-      { value: "5.0 ★", label: "Elégedettség", highlight: true }
+      { value: "12+", label: "Év tapasztalat" },
+      { value: "450+", label: "Sikeres rendezvény" },
+      { value: "100%", label: "Elégedettségi garancia" }
     ],
-    cardBadge: "Prémium Technika & Hangulat",
-    cardSubtitle: "RCF & Electro-Voice Hangrendszer",
-    cardImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-    cardFeatures: [
-      "Pontos érkezés, rendezett és elegáns DJ pult",
-      "Vezeték nélküli mikrofonok szertartáshoz és köszöntőkhöz",
-      "Személyre szabott zenei ív a vendégek ízlésére",
-      "Kötetlen, barátságos telefonos megbeszélés"
-    ]
+    features: [
+      "Pontos érkezés & hivatalos szerződés",
+      "Vezeték nélküli mikrofonok szertartáshoz és beszédekhez",
+      "Kívánság- és tiltólisták 100%-os tiszteletben tartása",
+      "Elegáns, rendezett pult és tiszta kábelezés"
+    ],
+    bgImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
   },
 
   // Rólam szekció

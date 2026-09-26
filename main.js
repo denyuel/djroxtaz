@@ -1,8 +1,8 @@
 /**
- * DJ ROXTAZ - Fő Renderelő Szkript (main.js)
+ * DJ ROXTAZ / NYÁRI ZSOLT - Fő Renderelő Szkript (main.js)
  * 
  * Dinamikus renderelés a SITE_DATA objektumok alapján.
- * Világos, prémium esküvői és rendezvény DJ megjelenés.
+ * Prémium, modern esküvői és rendezvény DJ megjelenés.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,26 +64,21 @@ function renderNav(data) {
     <header class="navbar">
       <div class="container nav-wrapper">
         <a href="#" class="nav-logo">
-          <div class="nav-logo-badge">🎵</div>
-          <div>
-            <div class="nav-logo-text font-display">
-              ${profile.stageName} <span style="color:#d97706;">•</span>
-            </div>
-            <div class="nav-logo-sub">${profile.title}</div>
-          </div>
+          <div class="nav-logo-text font-serif">NYÁRI ZSOLT</div>
+          <div class="nav-logo-sub">ESKÜVŐI & RENDEZVÉNY DJ</div>
         </a>
 
         <ul class="nav-links">
           ${linksHtml}
         </ul>
 
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook" style="padding: 8px 14px; font-size: 13px;" title="Facebook profil">
-            f Facebook
+        <div class="nav-right-actions">
+          <a href="${social.facebook}" target="_blank" rel="noopener" class="nav-social-btn" title="Facebook profil">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="tel:${profile.phoneRaw}" class="nav-phone-btn">
-            <span>📞 Hívás:</span>
-            <span>${profile.phone}</span>
+          <a href="tel:${profile.phoneRaw}" class="nav-phone-pill">
+            <span class="phone-icon">📞</span>
+            <span class="phone-number">${profile.phone}</span>
           </a>
         </div>
 
@@ -93,15 +88,15 @@ function renderNav(data) {
       <div id="mobileDrawer" class="mobile-nav-drawer">
         ${mobileLinksHtml}
         <div style="padding-top: 15px; display: flex; flex-direction: column; gap: 10px;">
-          <a href="tel:${profile.phoneRaw}" class="btn-primary btn-block" style="text-align:center;">
+          <a href="tel:${profile.phoneRaw}" class="btn-gold btn-block" style="text-align:center;">
             📞 Hívás: ${profile.phone}
           </a>
           <div style="display: flex; gap: 10px;">
-            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook btn-block" style="text-align:center; justify-content:center;">
-              f Facebook
+            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-hero-social btn-block" style="text-align:center; justify-content:center;">
+              Facebook profil
             </a>
-            <a href="${social.instagram}" target="_blank" rel="noopener" class="btn-social btn-instagram btn-block" style="text-align:center; justify-content:center;">
-              📸 Instagram
+            <a href="${social.instagram}" target="_blank" rel="noopener" class="btn-hero-social btn-block" style="text-align:center; justify-content:center;">
+              Instagram
             </a>
           </div>
         </div>
@@ -117,90 +112,62 @@ function renderHero(data) {
   if (!container) return;
 
   const statsHtml = hero.stats.map(s => `
-    <div class="stat-item">
-      <h3 class="font-display">${s.value}</h3>
-      <p>${s.label}</p>
+    <div class="hero-stat-card">
+      <div class="stat-number font-display">${s.value}</div>
+      <div class="stat-text">${s.label}</div>
     </div>
   `).join('');
 
-  const featuresHtml = hero.cardFeatures.map(f => `
-    <div><span class="check">✓</span> <span>${f}</span></div>
+  const featuresHtml = hero.features.map(f => `
+    <span class="hero-feat-item">✓ ${f}</span>
   `).join('');
 
   container.innerHTML = `
     <section class="hero-section">
-      <div class="container">
-        <div class="hero-grid">
-          
-          <div>
-            <div class="badge">
-              <span class="badge-dot"></span>
-              ${hero.seasonBadge}
-            </div>
+      <div class="hero-bg-media" style="background-image: url('${hero.bgImage}');"></div>
+      <div class="hero-gradient-overlay"></div>
 
-            <h1 class="hero-title">
-              <span style="font-weight: 600; font-size: 26px; color: #4b5563; display: block; margin-bottom: 6px;">
-                ${hero.greeting}
-              </span>
-              <span class="gold-gradient-text">
-                ${hero.headline}
-              </span>
-              <span style="font-size: 22px; color: #6b7280; display: block; margin-top: 6px; font-weight: 700;">
-                ${hero.subBrand}
-              </span>
-            </h1>
-
-            <p class="hero-subtitle">
-              ${hero.description}
-            </p>
-
-            <div class="hero-actions">
-              <a href="${hero.primaryCta.action}" class="btn-primary">
-                <span>📞 ${hero.primaryCta.text}</span>
-              </a>
-              <a href="${hero.secondaryCta.action}" target="_blank" rel="noopener" class="btn-secondary">
-                <span style="color:#10b981;">●</span> ${hero.secondaryCta.text}
-              </a>
-              <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook" style="padding: 14px 20px;">
-                f Facebook
-              </a>
-            </div>
-
-            <div class="hero-stats">
-              ${statsHtml}
-            </div>
-          </div>
-
-          <div>
-            <div class="hero-card">
-              <div class="hero-card-image-wrap">
-                <img src="${hero.cardImage || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'}" alt="${profile.name} - ${profile.title}" />
-                <div class="hero-card-overlay-badge font-display">
-                  ${hero.cardBadge || "Prémium Technika & Hangulat"}
-                </div>
-                <div class="hero-card-overlay-rating">
-                  ★ 5.0 Elégedettség
-                </div>
-              </div>
-
-              <div class="hero-card-body">
-                <div class="hero-card-header">
-                  <span style="color: #b45309; font-weight: 800; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">Garantált Színvonal</span>
-                  <span>${hero.cardSubtitle || "RCF & Electro-Voice"}</span>
-                </div>
-
-                <div class="hero-card-features">
-                  ${featuresHtml}
-                </div>
-
-                <a href="tel:${profile.phoneRaw}" class="btn-primary btn-block" style="font-size: 14px; padding: 12px;">
-                  📞 Telefonos egyeztetés: ${profile.phone}
-                </a>
-              </div>
-            </div>
-          </div>
-
+      <div class="container hero-container">
+        
+        <div class="hero-badge">
+          <span class="sparkle">✦</span>
+          <span>${hero.seasonBadge}</span>
+          <span class="sparkle">✦</span>
         </div>
+
+        <div class="hero-tagline">${hero.tagline}</div>
+
+        <h1 class="hero-title font-serif">
+          ${hero.title} <br />
+          <span class="gold-shimmer-text">${hero.titleHighlight}</span>
+        </h1>
+
+        <p class="hero-description">
+          ${hero.description}
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="${hero.primaryCta.action}" class="btn-gold-large">
+            <span style="font-size: 20px;">📞</span>
+            <span>${hero.primaryCta.text}</span>
+          </a>
+          <a href="${hero.secondaryCta.action}" target="_blank" rel="noopener" class="btn-glass-large">
+            <span class="whatsapp-live-dot"></span>
+            <span>${hero.secondaryCta.text}</span>
+          </a>
+          <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-glass-icon" title="Facebook profil">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+
+        <div class="hero-stats-glass">
+          ${statsHtml}
+        </div>
+
+        <div class="hero-features-bar">
+          ${featuresHtml}
+        </div>
+
       </div>
     </section>
   `;
@@ -223,19 +190,21 @@ function renderAbout(data) {
   `).join('');
 
   container.innerHTML = `
-    <section id="rolam" class="section-py" style="background: #fbfaf7; border-top: 1px solid #f3f4f6;">
+    <section id="rolam" class="section-py bg-light-warm">
       <div class="container">
         <div class="about-grid">
           
           <div class="about-text">
-            <div class="badge">${about.badge}</div>
-            <h2 style="font-size: 38px; margin-bottom: 20px;">
+            <div class="section-badge">${about.badge}</div>
+            <h2 class="section-title font-serif">
               ${about.title} <br />
               <span class="gold-gradient-text">${about.titleHighlight}</span>
             </h2>
-            ${paragraphsHtml}
-            <div style="margin-top: 28px;">
-              <a href="tel:${profile.phoneRaw}" class="btn-primary" style="font-size: 15px; padding: 13px 26px;">
+            <div class="about-paragraphs">
+              ${paragraphsHtml}
+            </div>
+            <div style="margin-top: 30px;">
+              <a href="tel:${profile.phoneRaw}" class="btn-gold" style="padding: 14px 28px;">
                 📞 ${about.ctaText}
               </a>
             </div>
@@ -258,18 +227,18 @@ function renderServices(data) {
   if (!container) return;
 
   const itemsHtml = services.items.map(srv => {
-    const listItems = srv.features.map(f => `<li>${f}</li>`).join('');
+    const listItems = srv.features.map(f => `<li>✓ ${f}</li>`).join('');
     return `
       <div class="service-card">
         <div>
           <div class="service-icon">${srv.icon}</div>
-          <h3 class="font-display">${srv.title}</h3>
-          <p>${srv.description}</p>
+          <h3 class="font-serif">${srv.title}</h3>
+          <p class="service-desc">${srv.description}</p>
           <ul class="service-list">
             ${listItems}
           </ul>
         </div>
-        <a href="tel:${profile.phoneRaw}" class="btn-secondary btn-block" style="text-align: center; font-size: 14px;">
+        <a href="tel:${profile.phoneRaw}" class="btn-outline-gold btn-block" style="text-align: center;">
           ${srv.btnText} &rarr;
         </a>
       </div>
@@ -277,12 +246,12 @@ function renderServices(data) {
   }).join('');
 
   container.innerHTML = `
-    <section id="szolgaltatasok" class="section-py" style="background: #ffffff; border-top: 1px solid #f3f4f6;">
+    <section id="szolgaltatasok" class="section-py bg-white">
       <div class="container">
-        <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-          <div class="badge">${services.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${services.title}</h2>
-          <p class="text-muted" style="font-size: 16px;">${services.subtitle}</p>
+        <div class="text-center section-header">
+          <div class="section-badge">${services.badge}</div>
+          <h2 class="section-title font-serif">${services.title}</h2>
+          <p class="section-subtitle">${services.subtitle}</p>
         </div>
 
         <div class="services-grid">
@@ -304,31 +273,31 @@ function renderGallery(data) {
       <img src="${item.imageUrl}" alt="${item.title}" loading="lazy" />
       <div class="gallery-overlay">
         <span class="gallery-cat">${item.category}</span>
-        <h4 class="gallery-title font-display">${item.title}</h4>
+        <h4 class="gallery-title font-serif">${item.title}</h4>
       </div>
     </div>
   `).join('');
 
   container.innerHTML = `
-    <section id="galeria" class="section-py" style="background: #f8fafc; border-top: 1px solid #e5e7eb;">
+    <section id="galeria" class="section-py bg-light-warm">
       <div class="container">
-        <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-          <div class="badge">${gallery.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${gallery.title}</h2>
-          <p class="text-muted" style="font-size: 16px;">${gallery.subtitle}</p>
+        <div class="text-center section-header">
+          <div class="section-badge">${gallery.badge}</div>
+          <h2 class="section-title font-serif">${gallery.title}</h2>
+          <p class="section-subtitle">${gallery.subtitle}</p>
         </div>
 
         <div class="gallery-grid">
           ${itemsHtml}
         </div>
 
-        <div style="text-align: center; margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+        <div style="text-align: center; margin-top: 45px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
           <p class="text-muted" style="font-size: 15px; font-weight: 500;">${gallery.socialCtaText}</p>
           <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;">
-            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook">
+            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social-clean">
               f Facebook: ${social.facebookName}
             </a>
-            <a href="${social.instagram}" target="_blank" rel="noopener" class="btn-social btn-instagram">
+            <a href="${social.instagram}" target="_blank" rel="noopener" class="btn-social-clean">
               📸 Instagram: ${social.instagramHandle}
             </a>
           </div>
@@ -346,27 +315,27 @@ function renderWorkflow(data) {
 
   const stepsHtml = workflow.steps.map(step => `
     <div class="step-card">
-      <div class="step-num font-display">${step.num}</div>
-      <h3 class="font-display">${step.title}</h3>
+      <div class="step-num font-serif">${step.num}</div>
+      <h3 class="font-serif">${step.title}</h3>
       <p>${step.description}</p>
     </div>
   `).join('');
 
   container.innerHTML = `
-    <section id="menetrend" class="section-py" style="background: #ffffff; border-top: 1px solid #f3f4f6;">
+    <section id="menetrend" class="section-py bg-white">
       <div class="container">
-        <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-          <div class="badge">${workflow.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${workflow.title}</h2>
-          <p class="text-muted" style="font-size: 16px;">${workflow.subtitle}</p>
+        <div class="text-center section-header">
+          <div class="section-badge">${workflow.badge}</div>
+          <h2 class="section-title font-serif">${workflow.title}</h2>
+          <p class="section-subtitle">${workflow.subtitle}</p>
         </div>
 
         <div class="steps-grid">
           ${stepsHtml}
         </div>
 
-        <div class="text-center" style="margin-top: 40px;">
-          <a href="tel:${profile.phoneRaw}" class="btn-primary">
+        <div class="text-center" style="margin-top: 45px;">
+          <a href="tel:${profile.phoneRaw}" class="btn-gold-large">
             📞 ${workflow.ctaButton}
           </a>
         </div>
@@ -392,19 +361,19 @@ function renderMusic(data) {
   `).join('');
 
   container.innerHTML = `
-    <section id="zene" class="section-py" style="background: #fbfaf7; border-top: 1px solid #e5e7eb;">
+    <section id="zene" class="section-py bg-light-warm">
       <div class="container">
-        <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-          <div class="badge">${music.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${music.title}</h2>
-          <p class="text-muted" style="font-size: 16px;">${music.subtitle}</p>
+        <div class="text-center section-header">
+          <div class="section-badge">${music.badge}</div>
+          <h2 class="section-title font-serif">${music.title}</h2>
+          <p class="section-subtitle">${music.subtitle}</p>
         </div>
 
         <div class="genres-grid">
           ${genresHtml}
         </div>
 
-        <div style="margin-top: 30px; background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 16px; padding: 20px; text-align: center; font-size: 14px; color: #92400e;">
+        <div class="guarantee-box">
           💡 <strong>${music.guaranteeNote.split(':')[0]}:</strong> ${music.guaranteeNote.split(':')[1]}
         </div>
       </div>
@@ -422,7 +391,7 @@ function renderTestimonials(data) {
     <div class="review-card">
       <div class="review-stars">${rev.stars}</div>
       <p class="review-text">"${rev.quote}"</p>
-      <div class="review-author font-display">
+      <div class="review-author font-serif">
         ${rev.author}
         <span class="review-loc font-sans"> • ${rev.role}, ${rev.location}</span>
       </div>
@@ -430,11 +399,11 @@ function renderTestimonials(data) {
   `).join('');
 
   container.innerHTML = `
-    <section id="velemenyek" class="section-py" style="background: #ffffff; border-top: 1px solid #f3f4f6;">
+    <section id="velemenyek" class="section-py bg-white">
       <div class="container">
-        <div class="text-center" style="max-width: 680px; margin: 0 auto;">
-          <div class="badge">${testimonials.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${testimonials.title}</h2>
+        <div class="text-center section-header">
+          <div class="section-badge">${testimonials.badge}</div>
+          <h2 class="section-title font-serif">${testimonials.title}</h2>
         </div>
 
         <div class="reviews-grid">
@@ -454,54 +423,54 @@ function renderContact(data) {
   const cb = contact.callback;
 
   container.innerHTML = `
-    <section id="kapcsolat" class="section-py" style="background: #fbfaf7; border-top: 1px solid #e5e7eb;">
+    <section id="kapcsolat" class="section-py bg-light-warm">
       <div class="container">
         
-        <div class="text-center" style="max-width: 680px; margin: 0 auto 35px;">
-          <div class="badge">${contact.badge}</div>
-          <h2 style="font-size: 38px; margin-bottom: 14px;">${contact.title}</h2>
-          <p class="text-muted" style="font-size: 16px;">${contact.subtitle}</p>
+        <div class="text-center section-header">
+          <div class="section-badge">${contact.badge}</div>
+          <h2 class="section-title font-serif">${contact.title}</h2>
+          <p class="section-subtitle">${contact.subtitle}</p>
         </div>
 
-        <!-- Nagy telefonos kiemelt kártya -->
+        <!-- Luxus telefonos kártya -->
         <div class="contact-box">
-          <div style="font-size: 44px; margin-bottom: 10px;">📞</div>
-          <div style="font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #92400e; font-weight: 800;">
+          <div class="contact-icon">📞</div>
+          <div class="contact-box-title">
             ${contact.boxTitle}
           </div>
           
           <div>
-            <a href="tel:${profile.phoneRaw}" class="phone-large font-display">
+            <a href="tel:${profile.phoneRaw}" class="phone-hero-link font-display">
               ${profile.phone}
             </a>
           </div>
 
-          <div class="contact-actions">
-            <a href="tel:${profile.phoneRaw}" class="btn-primary">
+          <div class="contact-actions-row">
+            <a href="tel:${profile.phoneRaw}" class="btn-gold-large">
               <span>📞 ${contact.callButtonText}</span>
             </a>
-            <a href="${profile.whatsappUrl}" target="_blank" rel="noopener" class="btn-secondary">
-              <span style="color:#10b981;">💬</span> ${contact.whatsappButtonText}
+            <a href="${profile.whatsappUrl}" target="_blank" rel="noopener" class="btn-glass-dark">
+              <span>💬 ${contact.whatsappButtonText}</span>
             </a>
-            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook" style="padding: 14px 22px;">
-              f Facebook
+            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social-clean" style="padding: 14px 24px;">
+              f Facebook profil
             </a>
           </div>
         </div>
 
         <!-- Egyszerű visszahívás űrlap -->
         <div class="callback-box">
-          <h3 class="font-display text-center" style="font-size: 22px; margin-bottom: 8px;">
+          <h3 class="font-serif text-center" style="font-size: 24px; margin-bottom: 8px; color: #0f172a;">
             ${cb.title}
           </h3>
-          <p class="text-center text-muted" style="font-size: 13px; margin-bottom: 24px;">
+          <p class="text-center text-muted" style="font-size: 14px; margin-bottom: 24px;">
             ${cb.subtitle}
           </p>
 
           <div id="callbackSuccess" style="display:none; text-align:center; padding: 24px;">
-            <div style="font-size: 40px; color:#10b981; font-weight:bold;">✓</div>
-            <h4 class="font-display" style="font-size: 20px; margin-top: 8px;">${cb.successTitle}</h4>
-            <p style="font-size: 14px; color:#6b7280; margin-top: 4px;">${cb.successMessage}</p>
+            <div style="font-size: 44px; color:#10b981; font-weight:bold;">✓</div>
+            <h4 class="font-serif" style="font-size: 22px; margin-top: 8px;">${cb.successTitle}</h4>
+            <p style="font-size: 14px; color:#64748b; margin-top: 4px;">${cb.successMessage}</p>
           </div>
 
           <form id="callbackForm">
@@ -520,7 +489,7 @@ function renderContact(data) {
               <input type="text" id="cbNote" placeholder="Pl. Esküvőnk lesz augusztusban, délután hívj" class="form-control" />
             </div>
 
-            <button type="submit" class="btn-primary btn-block" style="font-size: 15px; margin-top: 10px; padding: 15px;">
+            <button type="submit" class="btn-gold btn-block" style="font-size: 16px; margin-top: 10px; padding: 16px;">
               ${cb.submitButton}
             </button>
           </form>
@@ -541,22 +510,24 @@ function renderFooter(data) {
     footerMount.innerHTML = `
       <footer class="footer">
         <div class="container">
-          <div class="footer-logo font-display">${profile.stageName}</div>
-          <div style="color: #9ca3af; margin-bottom: 10px; font-size: 14px;">${profile.title} • <span style="color:#f59e0b;">${profile.domain}</span></div>
+          <div class="footer-logo font-serif">${profile.name}</div>
+          <div style="color: #94a3b8; margin-bottom: 12px; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;">
+            ${profile.title} • <span style="color:#d4af37;">${profile.domain}</span>
+          </div>
           
           <div class="social-links-bar">
-            <a href="${social.facebook}" target="_blank" rel="noopener" class="btn-social btn-facebook">
-              f Facebook profil
+            <a href="${social.facebook}" target="_blank" rel="noopener" class="footer-social-link">
+              f Facebook
             </a>
-            <a href="${social.instagram}" target="_blank" rel="noopener" class="btn-social btn-instagram">
-              📸 Instagram: ${social.instagramHandle}
+            <a href="${social.instagram}" target="_blank" rel="noopener" class="footer-social-link">
+              📸 Instagram
             </a>
           </div>
 
-          <div style="margin-top: 14px; color: #d1d5db; font-size: 14px;">
-            Telefon: <a href="tel:${profile.phoneRaw}" style="color:#f59e0b; font-weight:700;">${profile.phone}</a> • E-mail: <a href="mailto:${profile.email}" style="color:#f59e0b;">${profile.email}</a> • Web: <span style="color:#f59e0b;">${profile.domain}</span>
+          <div style="margin-top: 16px; color: #cbd5e1; font-size: 14px;">
+            Telefon: <a href="tel:${profile.phoneRaw}" style="color:#e5c07b; font-weight:700;">${profile.phone}</a> • E-mail: <a href="mailto:${profile.email}" style="color:#e5c07b;">${profile.email}</a>
           </div>
-          <div style="margin-top: 18px; font-size: 12px; color: #6b7280;">
+          <div style="margin-top: 20px; font-size: 12px; color: #64748b;">
             &copy; ${new Date().getFullYear()} ${profile.name}. Minden jog fenntartva.
           </div>
         </div>
