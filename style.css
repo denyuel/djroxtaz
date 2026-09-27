@@ -1,10 +1,10 @@
 /* ==========================================================
-   DJ ROXTAZ / NYÁRI ZSOLT - Luxus Esküvői & Rendezvény Stíluslap
-   Világszínvonalú, elegáns, prémium arculat
-   100% önálló, nulla külső CDN függőség, teljesen reszponzív
+   NYÁRI ZSOLT - Luxus Esküvői & Rendezvény Stíluslap
+   Borbás Webdesign Master Standard (100% önálló, nulla CDN hiba)
+   Tökéletesített mobil reszponzivitás és szótördelés
    ========================================================== */
 
-/* --- RESET & ALAP BEÁLLÍTÁSOK --- */
+/* --- RESET & ALAPVETŐ BEÁLLÍTÁSOK --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +14,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -22,8 +23,11 @@ body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.65;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
+/* --- TIPOGRÁFIA & SZÖVEGTÖRDELÉS (ANTI-AI-SLOP) --- */
 .font-serif {
   font-family: 'Playfair Display', Georgia, serif;
 }
@@ -31,6 +35,17 @@ body {
 .font-display {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
+}
+
+h1, h2, h3, h4, .hero-title, .section-title {
+  text-wrap: balance; /* Megakadályozza, hogy 1-2 árva szó lógjon a következő sorban */
+  overflow-wrap: break-word;
+  line-height: 1.22;
+}
+
+p, .hero-description, .about-paragraphs p, .service-desc, .review-text {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -66,7 +81,7 @@ button, input, textarea, select {
 
 .section-header {
   max-width: 680px;
-  margin: 0 auto 45px;
+  margin: 0 auto 48px;
 }
 
 .section-badge {
@@ -76,23 +91,23 @@ button, input, textarea, select {
   background: #fef9c3;
   border: 1px solid #fde047;
   color: #854d0e;
-  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
 
 .section-title {
-  font-size: 40px;
+  font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 800;
   color: #0f172a;
-  line-height: 1.25;
   margin-bottom: 14px;
 }
 
 .section-subtitle {
-  font-size: 16px;
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
   color: #64748b;
   line-height: 1.6;
 }
@@ -109,7 +124,7 @@ button, input, textarea, select {
   -webkit-text-fill-color: transparent;
 }
 
-/* --- GOMBOK & JELVÉNYEK --- */
+/* --- GOMBOK & FELÜLETEK --- */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -138,7 +153,7 @@ button, input, textarea, select {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  padding: 17px 36px;
+  padding: 18px 36px;
   border-radius: 50px;
   background: linear-gradient(135deg, #e5c07b 0%, #c5a059 100%);
   color: #0b0f17 !important;
@@ -161,7 +176,7 @@ button, input, textarea, select {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 17px 30px;
+  padding: 18px 30px;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -176,47 +191,6 @@ button, input, textarea, select {
 .btn-glass-large:hover {
   background: rgba(255, 255, 255, 0.2);
   border-color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.btn-glass-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  transition: all 0.25s ease;
-}
-
-.btn-glass-icon:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-  transform: translateY(-2px);
-}
-
-.btn-glass-dark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 28px;
-  border-radius: 50px;
-  background: #ffffff;
-  color: #0f172a;
-  font-weight: 700;
-  font-size: 15px;
-  border: 1.5px solid #cbd5e1;
-  transition: all 0.25s ease;
-}
-
-.btn-glass-dark:hover {
-  border-color: #d4af37;
-  color: #854d0e;
   transform: translateY(-2px);
 }
 
@@ -279,11 +253,11 @@ button, input, textarea, select {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(11, 15, 23, 0.88);
+  background: rgba(11, 15, 23, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 16px 0;
+  padding: 15px 0;
   transition: all 0.3s ease;
 }
 
@@ -301,7 +275,7 @@ button, input, textarea, select {
 .nav-logo-text {
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 800;
-  font-size: 22px;
+  font-size: 21px;
   letter-spacing: 1.5px;
   color: #ffffff;
   line-height: 1.1;
@@ -309,8 +283,8 @@ button, input, textarea, select {
 
 .nav-logo-sub {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2.2px;
+  font-size: 9.5px;
+  letter-spacing: 2px;
   color: #e5c07b;
   text-transform: uppercase;
   font-weight: 700;
@@ -386,7 +360,7 @@ button, input, textarea, select {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
@@ -396,7 +370,7 @@ button, input, textarea, select {
   display: none;
   background: #0b0f17;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 24px;
+  padding: 20px 24px 28px;
 }
 
 .mobile-nav-drawer.active {
@@ -415,9 +389,9 @@ button, input, textarea, select {
 /* --- HERO SZEKCIÓ (CINEMATIC LUXURY) --- */
 .hero-section {
   position: relative;
-  min-height: 88vh;
-  padding-top: 155px;
-  padding-bottom: 95px;
+  min-height: 86vh;
+  padding-top: 150px;
+  padding-bottom: 90px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -430,63 +404,47 @@ button, input, textarea, select {
   background-size: cover;
   background-position: center;
   transform: scale(1.02);
-  filter: brightness(0.6);
+  filter: brightness(0.55);
   z-index: 0;
 }
 
 .hero-gradient-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 25%, rgba(212, 175, 55, 0.15) 0%, rgba(11, 15, 23, 0.82) 65%, rgba(11, 15, 23, 0.96) 100%);
+  background: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.15) 0%, rgba(11, 15, 23, 0.85) 60%, rgba(11, 15, 23, 0.98) 100%);
   z-index: 1;
 }
 
 .hero-container {
   position: relative;
   z-index: 2;
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 20px;
-  border-radius: 50px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #e5c07b;
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.hero-tagline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #d4af37;
+  letter-spacing: 2.5px;
+  color: #e5c07b;
   text-transform: uppercase;
   margin-bottom: 16px;
 }
 
 .hero-title {
-  font-size: 54px;
+  font-size: clamp(2.3rem, 5.5vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.16;
   color: #ffffff;
   margin-bottom: 22px;
 }
 
 .hero-description {
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.18rem);
   color: #cbd5e1;
   max-width: 740px;
-  margin: 0 auto 38px;
+  margin: 0 auto 36px;
   line-height: 1.7;
 }
 
@@ -496,15 +454,15 @@ button, input, textarea, select {
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 45px;
+  margin-bottom: 42px;
 }
 
 .hero-stats-glass {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 18px;
   max-width: 740px;
-  margin: 0 auto 32px;
+  margin: 0 auto 30px;
 }
 
 .hero-stat-card {
@@ -513,7 +471,7 @@ button, input, textarea, select {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   transition: transform 0.2s;
 }
@@ -524,14 +482,14 @@ button, input, textarea, select {
 }
 
 .stat-number {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 900;
   color: #e5c07b;
   margin-bottom: 2px;
 }
 
 .stat-text {
-  font-size: 12px;
+  font-size: 11.5px;
   color: #94a3b8;
   text-transform: uppercase;
   font-weight: 700;
@@ -542,8 +500,8 @@ button, input, textarea, select {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 22px;
-  font-size: 14px;
+  gap: 20px;
+  font-size: 13.5px;
   color: #cbd5e1;
 }
 
@@ -579,7 +537,6 @@ button, input, textarea, select {
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 24px;
-  text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
 }
@@ -590,35 +547,40 @@ button, input, textarea, select {
   box-shadow: 0 10px 25px rgba(212, 175, 55, 0.12);
 }
 
-.pillar-icon {
-  font-size: 32px;
-  margin-bottom: 10px;
+.pillar-index {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #d4af37;
+  margin-bottom: 8px;
 }
 
 .pillar-card h4 {
-  font-size: 17px;
+  font-size: 16px;
   color: #0f172a;
   margin-bottom: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .pillar-card p {
   font-size: 13px;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* --- SZOLGÁLTATÁSOK --- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 26px;
 }
 
 .service-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  padding: 34px 28px;
+  padding: 34px 26px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -632,21 +594,21 @@ button, input, textarea, select {
   box-shadow: 0 18px 40px rgba(212, 175, 55, 0.14);
 }
 
-.service-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
+.service-tag {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #854d0e;
   background: #fef9c3;
-  border: 1px solid #fde047;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  margin-bottom: 22px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 14px;
 }
 
 .service-card h3 {
-  font-size: 24px;
+  font-size: 22px;
   color: #0f172a;
   margin-bottom: 12px;
 }
@@ -655,24 +617,30 @@ button, input, textarea, select {
   font-size: 14px;
   color: #475569;
   line-height: 1.7;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .service-list {
   list-style: none;
-  margin-bottom: 28px;
-  font-size: 13px;
+  margin-bottom: 26px;
+  font-size: 13.5px;
   color: #334155;
 }
 
 .service-list li {
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }
 
-/* --- KÉPGALÉRIA & HANGULATKÉPEK --- */
+.service-check {
+  color: #10b981;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* --- KÉPGALÉRIA --- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -683,7 +651,7 @@ button, input, textarea, select {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  height: 280px;
+  height: 270px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   background: #0f172a;
 }
@@ -707,7 +675,7 @@ button, input, textarea, select {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 22px;
+  padding: 20px;
   color: #fff;
 }
 
@@ -720,24 +688,24 @@ button, input, textarea, select {
 }
 
 .gallery-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: #ffffff;
   margin-top: 4px;
 }
 
-/* --- MENETREND (WORKFLOW) --- */
+/* --- MENETREND --- */
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 26px;
 }
 
 .step-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  padding: 34px 28px;
+  padding: 34px 26px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
   transition: all 0.25s ease;
 }
@@ -749,14 +717,15 @@ button, input, textarea, select {
 }
 
 .step-num {
-  font-size: 44px;
+  font-size: 42px;
   font-weight: 900;
   color: #d4af37;
   margin-bottom: 12px;
+  line-height: 1;
 }
 
 .step-card h3 {
-  font-size: 22px;
+  font-size: 21px;
   color: #0f172a;
   margin-bottom: 10px;
 }
@@ -774,36 +743,32 @@ button, input, textarea, select {
   gap: 18px;
 }
 
-.genre-pill {
+.genre-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 18px;
   padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
 
-.genre-pill:hover {
+.genre-card:hover {
   border-color: #d4af37;
   transform: translateY(-2px);
 }
 
-.genre-icon {
-  font-size: 28px;
-}
-
-.genre-pill h4 {
-  font-size: 16px;
+.genre-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
   color: #0f172a;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
-.genre-pill p {
+.genre-desc {
   font-size: 13px;
   color: #64748b;
+  line-height: 1.5;
 }
 
 .guarantee-box {
@@ -811,17 +776,18 @@ button, input, textarea, select {
   background: #fef9c3;
   border: 1.5px solid #fde047;
   border-radius: 18px;
-  padding: 22px;
+  padding: 22px 26px;
   text-align: center;
-  font-size: 15px;
+  font-size: 14.5px;
   color: #713f12;
+  line-height: 1.6;
 }
 
 /* --- VÉLEMÉNYEK --- */
 .reviews-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  gap: 26px;
 }
 
 .review-card {
@@ -834,7 +800,7 @@ button, input, textarea, select {
 
 .review-stars {
   color: #d4af37;
-  font-size: 20px;
+  font-size: 19px;
   margin-bottom: 14px;
   letter-spacing: 2px;
 }
@@ -844,11 +810,11 @@ button, input, textarea, select {
   color: #334155;
   font-style: italic;
   line-height: 1.8;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .review-author {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #0f172a;
   border-top: 1px solid #f1f5f9;
@@ -861,50 +827,47 @@ button, input, textarea, select {
   font-weight: normal;
 }
 
-/* --- KAPCSOLAT & VISSZAHÍVÁS --- */
+/* --- KAPCSOLAT --- */
 .contact-box {
   background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
   border: 2px solid rgba(212, 175, 55, 0.5);
   border-radius: 28px;
-  padding: 50px 30px;
+  padding: 48px 30px;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
-.contact-icon {
-  font-size: 46px;
-  margin-bottom: 12px;
-}
-
 .contact-box-title {
-  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #e5c07b;
   font-weight: 800;
+  margin-bottom: 8px;
 }
 
 .phone-hero-link {
-  font-size: 42px;
+  font-size: clamp(1.8rem, 5vw, 2.75rem);
   font-weight: 900;
   color: #ffffff;
-  margin: 14px 0;
+  margin: 12px 0;
   display: inline-block;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 0.2s;
 }
 
 .phone-hero-link:hover {
   color: #e5c07b;
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .contact-actions-row {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 24px;
+  gap: 14px;
+  margin-top: 22px;
   flex-wrap: wrap;
 }
 
@@ -914,26 +877,26 @@ button, input, textarea, select {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  padding: 38px;
+  padding: 36px 30px;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   color: #334155;
 }
 
 .form-control {
   width: 100%;
-  padding: 14px 18px;
+  padding: 13px 16px;
   background: #f8fafc;
   border: 1.5px solid #cbd5e1;
   border-radius: 12px;
@@ -953,15 +916,15 @@ button, input, textarea, select {
 .footer {
   background: #0b0f17;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 55px 0 40px;
+  padding: 50px 0 35px;
   text-align: center;
   color: #94a3b8;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .footer-logo {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: 1px;
   color: #ffffff;
   margin-bottom: 6px;
@@ -970,8 +933,8 @@ button, input, textarea, select {
 .social-links-bar {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin: 22px 0;
+  gap: 12px;
+  margin: 20px 0;
 }
 
 .footer-social-link {
@@ -990,38 +953,34 @@ button, input, textarea, select {
   border-color: #e5c07b;
 }
 
-/* --- LEBEGŐ GOMB --- */
+/* --- LEBEGŐ HÍVÓGOMB --- */
 .floating-call {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   z-index: 999;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 15px 26px;
+  padding: 13px 22px;
   border-radius: 50px;
   background: linear-gradient(135deg, #e5c07b, #c5a059);
   color: #0b0f17 !important;
   font-weight: 900;
-  font-size: 15px;
-  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.45);
-  animation: pulse 2.5s infinite;
+  font-size: 14px;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transition: transform 0.2s ease;
 }
 
-/* --- ANIMÁCIÓK --- */
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.9; transform: scale(1.03); }
+.floating-call:hover {
+  transform: scale(1.05);
 }
 
-/* --- RESZPONZÍV TÖRÉSPONTOK --- */
+/* --- RESZPONZÍV TÖRÉSPONTOK (MOBILRA OPTIMALIZÁLVA) --- */
 @media (max-width: 900px) {
-  .hero-title {
-    font-size: 40px;
-  }
   .about-grid {
     grid-template-columns: 1fr;
+    gap: 35px;
   }
   .services-grid, .steps-grid, .genres-grid {
     grid-template-columns: 1fr;
@@ -1032,33 +991,106 @@ button, input, textarea, select {
   .reviews-grid {
     grid-template-columns: 1fr;
   }
-  .hero-stats-glass {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
 }
 
 @media (max-width: 768px) {
-  .nav-links, .nav-social-btn {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .section-py {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .nav-links, .nav-social-btn, .nav-phone-pill {
     display: none;
   }
+
   .mobile-menu-btn {
     display: block;
   }
-  .hero-title {
-    font-size: 32px;
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 110px;
+    padding-bottom: 55px;
   }
-  .hero-description {
-    font-size: 16px;
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
   }
-  .phone-hero-link {
-    font-size: 28px;
+
+  .hero-cta-group .btn-gold-large,
+  .hero-cta-group .btn-glass-large {
+    width: 100%;
+    min-height: 50px;
+    padding: 14px 20px;
+    font-size: 15px;
   }
-  .gallery-grid {
+
+  .hero-stats-glass {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 12px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-stat-card {
+    padding: 6px 4px;
+    background: transparent;
+    border: none;
+  }
+
+  .stat-number {
+    font-size: 22px;
+  }
+
+  .stat-text {
+    font-size: 9.5px;
+    letter-spacing: 0.2px;
+  }
+
+  .hero-features-bar {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12.5px;
+  }
+
+  .pillars-grid {
     grid-template-columns: 1fr;
   }
-  .section-py {
-    padding-top: 65px;
-    padding-bottom: 65px;
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .gallery-card {
+    height: 240px;
+  }
+
+  .contact-actions-row {
+    flex-direction: column;
+  }
+
+  .contact-actions-row a {
+    width: 100%;
+  }
+
+  .callback-box {
+    padding: 26px 18px;
+  }
+
+  .floating-call {
+    bottom: 16px;
+    right: 16px;
+    padding: 11px 18px;
+    font-size: 13px;
   }
 }

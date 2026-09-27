@@ -1,7 +1,8 @@
 /**
- * DJ ROXTAZ - Weboldal Tartalmi Adatok (Object Struktúra)
+ * NYÁRI ZSOLT - Weboldal Tartalmi Adatok (Object Struktúra)
  * 
- * Nyári Zsolt - Rendezvény és Esküvői DJ
+ * Esküvői és Rendezvény DJ
+ * Domain: www.nyarizsolti.hu
  * Facebook: https://www.facebook.com/ny.zsolt
  * Instagram: @djroxtaz
  */
@@ -20,10 +21,10 @@ const SITE_DATA = {
     email: "info@nyarizsolti.hu",
     whatsappUrl: "https://wa.me/36301234567",
     location: "Budapest & Országosan",
-    workingHours: "Hétfőtől vasárnapig hívható"
+    workingHours: "Hétfőtől vasárnapig közvetlenül hívható"
   },
 
-  // Közösségi média profilok (Facebook & Instagram a megadott profil alapján)
+  // Közösségi média profilok
   social: {
     facebook: "https://www.facebook.com/ny.zsolt",
     facebookName: "facebook.com/ny.zsolt",
@@ -36,21 +37,20 @@ const SITE_DATA = {
     { label: "Rólam", href: "#rolam" },
     { label: "Szolgáltatások", href: "#szolgaltatasok" },
     { label: "Galéria", href: "#galeria" },
-    { label: "Hogyan dolgozom?", href: "#menetrend" },
-    { label: "Zenei stílusok", href: "#zene" },
+    { label: "Menetrend", href: "#menetrend" },
+    { label: "Zenei világ", href: "#zene" },
     { label: "Vélemények", href: "#velemenyek" },
     { label: "Kapcsolat", href: "#kapcsolat" }
   ],
 
   // Hero (Nyitó) szekció
   hero: {
-    seasonBadge: "2025 / 2026 Esküvői & Rendezvény Szezon",
-    tagline: "Nyári Zsolt • Esküvői & Rendezvény DJ",
+    eyebrow: "ESKÜVŐI ÉS RENDEZVÉNY DJ • BUDAPEST & ORSZÁGOSAN",
     title: "A zene, ami felejthetetlenné teszi a",
     titleHighlight: "Nagy Napot.",
-    description: "Több mint egy évtizedes tapasztalat, prémium RCF hangtechnika, intelligens látványfények és a tánctér pulzusára épülő zenei élmény a megható szertartástól a hajnalig tartó fergeteges buliig.",
+    description: "Több mint tíz év tapasztalat, prémium RCF hangtechnika és a tánctér lüktetésére épülő zenei ív a megható szertartástól a hajnalig tartó tombolásig — felesleges sallangok nélkül.",
     primaryCta: {
-      text: "Hívj és beszéljük meg!",
+      text: "Hívj most kötetlenül",
       action: "tel:+36301234567"
     },
     secondaryCta: {
@@ -60,102 +60,101 @@ const SITE_DATA = {
     stats: [
       { value: "12+", label: "Év tapasztalat" },
       { value: "450+", label: "Sikeres rendezvény" },
-      { value: "100%", label: "Elégedettségi garancia" }
+      { value: "5.0 ★", label: "Elégedettségi garancia" }
     ],
-    features: [
-      "Pontos érkezés & hivatalos szerződés",
-      "Vezeték nélküli mikrofonok szertartáshoz és beszédekhez",
-      "Kívánság- és tiltólisták 100%-os tiszteletben tartása",
-      "Elegáns, rendezett pult és tiszta kábelezés"
+    trustBadges: [
+      "Hivatalos szerződés és számlaképesség",
+      "Vezeték nélküli mikrofonpark a köszöntőkhöz",
+      "Kívánság- és tiltólisták 100%-os kezelése"
     ],
     bgImage: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80"
   },
 
   // Rólam szekció
   about: {
-    badge: "Rólam & Hitvallásom",
+    badge: "Hitvallás & Szemlélet",
     title: "A tánctér ritmusát olvasom,",
-    titleHighlight: "nem csak zenét játszom.",
+    titleHighlight: "nem csak dalokat játszom.",
     paragraphs: [
-      "Több mint egy évtizede vagyok jelen az esküvők és rendezvények világában. Meggyőződésem, hogy a jó rendezvény DJ nem a saját ízlését erőlteti a vendégekre, hanem folyamatosan érzi a tánctér pulzusát.",
-      "Tudom, mikor kell finom háttérzenével kísérni a vacsorát, mikor kell a megható pillanatokhoz szólnia a dallamnak, és mikor jön el a pont, amikor meg kell tölteni a táncparkettet a hajnali zárásig."
+      "Több mint egy évtizede vagyok jelen az esküvők és céges rendezvények világában. Meggyőződésem, hogy a jó rendezvény DJ nem a saját zenei ízlését erőlteti a vendégekre, hanem folyamatosan együtt lélegzik a tánctérrel.",
+      "Tudom, mikor kell finom, elegáns háttérzenével kísérni a vacsorát, mikor kell a megható pillanatokhoz szólnia a dallamnak, és mikor jön el a pont, amikor meg kell tölteni a táncparkettet a hajnali zárásig."
     ],
-    ctaText: "Hívj és egyeztessünk",
+    ctaText: "Egyeztessünk telefonon",
     pillars: [
       {
-        icon: "🤝",
-        title: "Megbízhatóság",
-        description: "Pontos érkezés órákkal a kezdés előtt, hivatalos szerződés."
+        index: "01",
+        title: "Megbízhatóság & Szerződés",
+        description: "Pontos érkezés órákkal a vendégek előtt, hivatalos szerződés és garancia."
       },
       {
-        icon: "🎵",
-        title: "Rugalmasság",
-        description: "Generációk közös kedvencei a 70-es évektől a mai slágerekig."
+        index: "02",
+        title: "Generációk Összhangja",
+        description: "A 70-es, 80-as, 90-es évek örökzöldjeitől a mai slágerekig minden korosztály megtalálja a kedvencét."
       },
       {
-        icon: "🔊",
-        title: "Csúcstechnika",
-        description: "RCF hangzás és intelligens robotlámpák, tiszta kábelezés."
+        index: "03",
+        title: "Csúcskategóriás RCF Technika",
+        description: "Kristálytiszta hangzás, intelligens robotlámpák, diszkrét pult és rejtett kábelezés."
       },
       {
-        icon: "💬",
-        title: "Közvetlenség",
-        description: "Közös zenei tervezés az ifjú párral vagy megrendelővel."
+        index: "04",
+        title: "Közvetlen Partnerség",
+        description: "Részletes zenei előzetes megbeszélés: a ti kívánságaitok formálják az estét."
       }
     ]
   },
 
-  // Szolgáltatások (Árak nélkül, telefonos egyeztetés fókusszal)
+  // Szolgáltatások
   services: {
     badge: "Szolgáltatások",
     title: "Miben segíthetek a rendezvényeden?",
-    subtitle: "Minden esemény egyedi – az igényekhez és a helyszín adottságaihoz igazítjuk a hang- és fénytechnikát.",
+    subtitle: "Minden esemény egyedi. A helyszín adottságaihoz és a vendégek létszámához igazítjuk a hang- és fénytechnikát.",
     items: [
       {
         id: "wedding",
-        icon: "💍",
-        title: "Esküvői DJ",
-        description: "Szertartás hangosítás mikrofonnal, elegáns vacsorazene, nyitótánc és hajnalig tartó fergeteges buli a pár és a vendégek zenei kívánságai szerint.",
+        tag: "FŐ SZOLGÁLTATÁS",
+        title: "Esküvői DJ & Hangosítás",
+        description: "Szertartás hangosítás külön kültéri/beltéri mikrofonnal, elegáns vacsorazene, nyitótánc és hajnalig tartó tombolás a kívánságaitok szerint.",
         features: [
-          "Külön kültéri/beltéri ceremónia hangosítás",
-          "Kívánság- és tiltólisták teljes körű kezelése",
+          "Külön ceremónia és koktél hangosítás",
+          "Kívánság- és feketelisták pontos kezelése",
           "Tökéletes összhang a ceremóniamesterrel"
         ],
         btnText: "Beszéljünk az esküvőről"
       },
       {
         id: "corporate",
-        icon: "🏢",
-        title: "Céges Rendezvények",
-        description: "Évzárók, gálák, csapatépítők és karácsonyi partik. Kulturált, professzionális fellépés és a hivatalos protokoll után pörgős esti tánc.",
+        tag: "CÉGES & PROTOKOLL",
+        title: "Céges Rendezvények & Gálák",
+        description: "Évzárók, jubileumi gálák, konferenciák és csapatépítők. Kulturált megjelenés, diszkrét technika és pörgős esti tánc a hivatalos rész után.",
         features: [
-          "Vezeték nélküli mikrofonpark elnöki beszédekhez",
-          "Rejtett kábelezés, elegáns diszkrét technika",
+          "Vezeték nélküli mikrofonok előadásokhoz",
+          "Letisztult, esztétikus DJ pult",
           "Hivatalos számlaképes elszámolás"
         ],
         btnText: "Beszéljünk a céges partiról"
       },
       {
         id: "party-lighting",
-        icon: "✨",
-        title: "Születésnap & Fénytechnika",
-        description: "Kerek évfordulók (18., 30., 40., 50.), jubileumok és látványelemek: nehézfüst a nyitótánchoz („tánc a felhők felett”) és fali súrolófények.",
+        tag: "EXTRA HANGULAT",
+        title: "Fénytechnika & Nehézfüst",
+        description: "Kerek évfordulók (30., 40., 50.), privát partik és prémium látványelemek: nehézfüst a nyitótánchoz („tánc a felhők felett”) és fali súrolófények.",
         features: [
-          "Nehézfüst (nem kapcsolja be a füstérzékelőt)",
+          "Nehézfüst (nem indítja be a tűzjelzőt)",
           "Intelligens robotlámpák a tánctérre",
-          "Fali akkumulátoros LED hangulatfények"
+          "Vezeték nélküli LED teremvilágítás"
         ],
-        btnText: "Beszéljünk a privát partiról"
+        btnText: "Beszéljünk a látványelemekről"
       }
     ]
   },
 
-  // Képgaléria / Hangulatképek (Facebook & Instagram ihlette pillanatok)
+  // Képgaléria
   gallery: {
-    badge: "Pillanatképek & Hangulat",
-    title: "Események a kamerák mögül",
-    subtitle: "Nézz be a kulisszák mögé – valódi pillanatok, fények és bulihangulat az eseményekről.",
-    socialCtaText: "Kövess be és nézd meg a legfrissebb videókat az Instán és Facebookon!",
+    badge: "Pillanatok & Hangulat",
+    title: "Valódi pillanatok a pult mögül",
+    subtitle: "Fények, zene és telt házas táncparkett a legutóbbi rendezvényekről.",
+    socialCtaText: "Kövess be a legfrissebb videókért és sztorikért:",
     items: [
       {
         title: "Tánc a felhők felett",
@@ -163,79 +162,79 @@ const SITE_DATA = {
         imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
       },
       {
-        title: "Éjszakai tombolás",
-        category: "Táncparkett hangulat",
+        title: "Telt házas táncparkett",
+        category: "Hajnali bulihangulat",
         imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
       },
       {
-        title: "A DJ Pult mögött",
-        category: "Élő DJ Szett & Fények",
+        title: "Élő DJ Szett & Robotlámpák",
+        category: "Fény- és hangtechnika",
         imageUrl: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80"
       },
       {
         title: "Elegáns teremvilágítás",
-        category: "Fali LED súrolófények",
+        category: "Fali LED hangulatfények",
         imageUrl: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
       }
     ]
   },
 
-  // Menetrend / Hogyan dolgozunk együtt?
+  // Menetrend
   workflow: {
     badge: "Menetrend",
     title: "Hogyan dolgozunk együtt?",
-    subtitle: "3 egyszerű lépésben a felejthetetlen estéig – egyszerűen, kötetlenül, telefonon.",
+    subtitle: "3 átlátható lépés a felejthetetlen estéig — egyszerűen, kötetlenül, emberi hangon.",
     steps: [
       {
-        num: "01.",
+        num: "01",
         title: "Telefonos beszélgetés",
-        description: "Felhívsz, átbeszéljük a dátumot, a helyszínt, a várható létszámot és a zenei elképzeléseiteket."
+        description: "Felhívsz, átbeszéljük a dátumot, a helyszínt, a vendéglétszámot és az alapvető zenei elképzeléseiteket."
       },
       {
-        num: "02.",
-        title: "Személyes egyeztetés",
-        description: "Személyesen vagy online átnézzük a menetrendet: a szertartás dalait, a nyitótáncot, a kívánságlistát és a tiltólistát."
+        num: "02",
+        title: "Zenei forgatókönyv",
+        description: "Személyesen vagy online egyeztetjük a menetrendet: szertartás dalai, nyitótánc, kedvenc slágerek és a tiltólista."
       },
       {
-        num: "03.",
+        num: "03",
         title: "A Nagy Nap",
-        description: "Órákkal a vendégek érkezése előtt beépítem a technikát, és gondoskodom a fergeteges hangulatról a legutolsó táncig."
+        description: "Órákkal a vendégek érkezése előtt beépítem a hang- és fénytechnikát, és az utolsó dalig biztosítom a fergeteges hangulatot."
       }
     ],
     ctaButton: "Kezdjük az 1. lépéssel: +36 30 123 4567"
   },
 
-  // Zenei repertoár
+  // Zenei világ
   music: {
-    badge: "Zenei Világ",
-    title: "Minden stílusban otthonosan",
-    subtitle: "A zenei válogatást mindig a megrendelő és a násznép ízlése formálja.",
+    badge: "Zenei Repertoár",
+    title: "Minden generáció megtalálja a ritmust",
+    subtitle: "Nincs sablon lejátszási lista. A dalokat mindig a pár és a vendégsereg pillanatnyi dinamikája formálja.",
     genres: [
-      { icon: "📻", title: "Retro & Nosztalgia", desc: "70-es, 80-as, 90-es évek örökzöldjei" },
-      { icon: "✨", title: "2000-es Millennium", desc: "Avicii, Guetta, Rihanna, Groovehouse" },
-      { icon: "🔥", title: "Mai Rádiós Slágerek", desc: "Dua Lipa, The Weeknd, Valmar, Halott Pénz" },
-      { icon: "🎸", title: "Rock'n'Roll & Örökzöld", desc: "AC/DC, Bon Jovi, Hungária, Republic" },
-      { icon: "🎷", title: "Funky & Nu-Disco", desc: "Daft Punk, Bruno Mars, Earth Wind & Fire" },
-      { icon: "🎉", title: "Hazai Kedvencek", desc: "Menyasszonytánc & Mulatós igény szerint" }
+      { name: "Retro & 70s-80s-90s", desc: "Örökzöld slágerek, pop-rock és nosztalgia klasszikusok" },
+      { name: "2000s & Millennium Pop", desc: "Avicii, David Guetta, Rihanna, Groovehouse, Scooter" },
+      { name: "Mai Rádiós & Klub Kedvencek", desc: "Dua Lipa, The Weeknd, Bruno Mars, Valmar, Halott Pénz" },
+      { name: "Funky, RnB & Nu-Disco", desc: "Daft Punk, Earth Wind & Fire, Purple Disco Machine" },
+      { name: "Rock'n'Roll & Legendák", desc: "Hungária, AC/DC, Queen, Bon Jovi, Republic" },
+      { name: "Magyar Kedvencek & Menyasszonytánc", desc: "Kizárólag kérésre és igény szerint, tiszteletben tartva a határokat" }
     ],
-    guaranteeNote: "Kívánságlista & Fekete lista garancia: Előre elküldhetitek a kedvenc dalaitokat, a nem kívánt számok pedig garantáltan nem csendülnek fel."
+    guaranteeNote: "Kívánságlista & Feketelista garancia: Előre elküldhetitek a kötelező kedvenceket, és a nem kívánt dalok garantáltan nem fognak felcsendülni az este folyamán."
   },
 
-  // Ügyfélvélemények
+  // Vélemények
   testimonials: {
-    badge: "Vélemények",
-    title: "Mit mondanak, akik velem buliztak?",
+    badge: "Referenciák",
+    title: "Akik velem buliztak a Nagy Napon",
     items: [
       {
         stars: "★★★★★",
-        quote: "Zsolt egyszerűen zseniális volt az esküvőnkön! A vacsora alatt tökéletes aláfestést teremtett, a nyitótánc után pedig hajnali 5-ig senki sem ült le. Minden kérésünkre figyelt, a vendégek azóta is emlegetik a bulit!",
+        quote: "Zsolt egyszerűen zseniális volt az esküvőnkön! A vacsora alatt tökéletes aláfestést adott, a nyitótánc után pedig hajnali 5-ig senki sem ült le. Minden kérésünkre figyelt, a vendégek azóta is emlegetik a bulit!",
         author: "Nikolett & Tamás",
         role: "Ifjú pár",
         location: "Deák Udvarház"
       },
       {
         stars: "★★★★★",
-        quote: "A cégünk évzáró gálájára kértük fel Zsoltot. A 20 évestől az 55 éves kollégákig mindenki talált kedvencet, a technikai pontossága és a közvetlensége is csillagos ötös volt.",
+        quote: "A cégünk évzáró gálájára kértük fel Zsoltot. A 20 évestől az 55 éves kollégákig mindenki talált kedvencet. A technikai fegyelem, a pontos érkezés és a közvetlensége is csillagos ötös volt.",
         author: "Borbély Kristóf",
         role: "Rendezvényszervező",
         location: "Budapest Marriott Hotel"
@@ -243,28 +242,28 @@ const SITE_DATA = {
     ]
   },
 
-  // Kapcsolat és Visszahívás
+  // Kapcsolat
   contact: {
     badge: "Kapcsolat",
-    title: "Beszéljük meg az elképzeléseidet!",
-    subtitle: "Hívj fel most kötetlenül, vagy add meg az elérhetőségedet és visszahívlak!",
+    title: "Beszéljük meg az elképzeléseiteket!",
+    subtitle: "Hívj fel most kötetlenül, vagy add meg az elérhetőségedet és hamarosan visszahívlak!",
     boxTitle: "Közvetlen hívás hétfőtől vasárnapig:",
-    callButtonText: "Hívás indítása most",
-    whatsappButtonText: "Üzenet WhatsAppon",
+    callButtonText: "Hívás indítása",
+    whatsappButtonText: "WhatsApp üzenet",
     callback: {
-      title: "Vagy kérj visszahívást:",
-      subtitle: "Add meg a neved és telefonszámod, hamarosan visszahívlak!",
+      title: "Vagy kérj gyors visszahívást:",
+      subtitle: "Add meg a neved és telefonszámod, és a nap folyamán kereslek.",
       nameLabel: "Neved *",
       phoneLabel: "Telefonszámod *",
       noteLabel: "Mikor hívhatlak? / Rövid üzenet (opcionális)",
       submitButton: "Visszahívást kérek",
-      successTitle: "Köszönöm!",
-      successMessage: "Hamarosan felhívlak a megadott telefonszámon."
+      successTitle: "Köszönöm a megkeresést!",
+      successMessage: "Hamarosan kereslek a megadott telefonszámon."
     }
   }
 };
 
-// Böngészőben globálisan elérhető
+// Globálisan elérhető
 if (typeof window !== 'undefined') {
   window.SITE_DATA = SITE_DATA;
 }
