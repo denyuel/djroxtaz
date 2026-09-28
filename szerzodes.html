@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webfejlesztési és Tervezési Megbízási Szerződés - Nyári Zsolt</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 15mm 18mm 15mm;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            color: #111111;
+            line-height: 1.48;
+            padding: 25px;
+            background-color: #ffffff;
+            font-size: 10.5pt;
+        }
+
+        .contract-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.35rem;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-ref {
+            text-align: center;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            color: #444444;
+        }
+
+        .intro {
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .parties-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #cccccc;
+            padding: 12px 16px;
+            background-color: #fbfbfb;
+        }
+
+        .party-block {
+            width: 48%;
+            font-size: 9.5pt;
+        }
+
+        .party-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+
+        .party-details {
+            line-height: 1.55;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 5px;
+            font-size: 10.5pt;
+            text-transform: uppercase;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 2px;
+        }
+
+        p, li {
+            text-align: justify;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        .placeholder-line {
+            border-bottom: 1px solid #000000;
+            display: inline-block;
+            min-width: 180px;
+            height: 1.05rem;
+            vertical-align: bottom;
+            margin-left: 4px;
+        }
+
+        .placeholder-short {
+            border-bottom: 1px solid #000000;
+            display: inline-block;
+            min-width: 60px;
+            height: 1.05rem;
+            vertical-align: bottom;
+            margin-left: 4px;
+        }
+
+        .signatures-table {
+            width: 100%;
+            margin-top: 35px;
+            border: none;
+        }
+
+        .signatures-table td {
+            width: 50%;
+            border: none;
+            text-align: center;
+            vertical-align: top;
+            padding-top: 40px;
+        }
+
+        .sig-line {
+            width: 80%;
+            margin: 0 auto;
+            border-top: 1px solid #000000;
+            padding-top: 5px;
+            font-size: 9.5pt;
+            font-weight: bold;
+        }
+
+        .sig-sub {
+            font-size: 8.5pt;
+            color: #555555;
+            margin-top: 2px;
+        }
+
+        .date-section {
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background-color: transparent;
+            }
+            .contract-container {
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .print-toolbar {
+            background: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: sans-serif;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-print {
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-print:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contract-container">
+
+    <div class="print-toolbar no-print">
+        <div>
+            <strong>Szerződés nyomtatása / Mentése PDF-ként:</strong> Kattints a gombra vagy nyomj <code>Ctrl + P</code>-t!
+        </div>
+        <button class="btn-print" onclick="window.print()">🖨️ Nyomtatás / PDF mentés</button>
+    </div>
+
+    <h1>Vállalkozási és Webfejlesztési Szerződés</h1>
+    <div class="legal-ref">
+        (amely létrejött a Polgári Törvénykönyvről szóló 2013. évi V. törvény vállalkozási és megbízási szerződésekre vonatkozó rendelkezései szerint)
+    </div>
+
+    <div class="intro">
+        amely létrejött az alulírott helyen és napon, az alábbi szerződő felek között:
+    </div>
+
+    <div class="parties-grid">
+        <div class="party-block">
+            <div class="party-title">1. Megbízott (Fejlesztő & Kivitelező):</div>
+            <div class="party-details">
+                <strong>Név:</strong> Borbás Dániel<br>
+                <strong>Székhely / Lakcím:</strong> <span class="placeholder-line" style="min-width: 170px;"></span><br>
+                <strong>Adószám / Nyilv. szám:</strong> <span class="placeholder-line" style="min-width: 140px;"></span><br>
+                <strong>Bankszámlaszám:</strong> <span class="placeholder-line" style="min-width: 170px;"></span><br>
+                <strong>E-mail:</strong> denyuel@gmail.com<br>
+                <strong>Telefon:</strong> +36 30 309 3302
+            </div>
+        </div>
+
+        <div class="party-block">
+            <div class="party-title">2. Megbízó (Megrendelő):</div>
+            <div class="party-details">
+                <strong>Név:</strong> Nyári Zsolt<br>
+                <strong>Székhely / Lakcím:</strong> <span class="placeholder-line" style="min-width: 170px;"></span><br>
+                <strong>Cégnév / EV (ha releváns):</strong> <span class="placeholder-line" style="min-width: 140px;"></span><br>
+                <strong>Adószám / Adóazonosító:</strong> <span class="placeholder-line" style="min-width: 140px;"></span><br>
+                <strong>E-mail:</strong> <span class="placeholder-line" style="min-width: 170px;"></span><br>
+                <strong>Telefon:</strong> <span class="placeholder-line" style="min-width: 170px;"></span>
+            </div>
+        </div>
+    </div>
+
+    <p style="font-size: 9.5pt; font-style: italic;">A Megbízott és a Megbízó a továbbiakban külön-külön: Fél, együttesen: Felek.</p>
+
+    <div class="section-title">1. A Szerződés Tárgya és Műszaki Tartalma</div>
+    <p>1.1. A Megbízó megrendeli, a Megbízott pedig elvállalja egy egyedi, modern, mobil-reszponzív, prémium bemutató weboldal tervezését, programozását és élesítését a Megbízó zenei és rendezvényszolgáltatói tevékenységéhez kapcsolódóan (Nyári Zsolt - Esküvői és Rendezvény DJ).</p>
+    <p>1.2. A webfejlesztési szolgáltatás az alábbi konkrét műszaki elemeket tartalmazza:</p>
+    <ul>
+        <li><strong>Strukturált Weboldal:</strong> Teljes körű reszponzív felület (Fejléc, Hero szekció, Hitvallás, Szolgáltatások, Fotógaléria, Rendezvény menetrend, Zenei repertoár, Ügyfélvélemények, Kapcsolat és Visszahíváskérő modul, Lábléc, Lebegő mobil hívógomb).</li>
+        <li><strong>Objektum-orientált adatmodell:</strong> Dedikált tartalmi adatfájl (<code>data.js</code>), amely biztosítja, hogy a szövegek, fotók és telefonszámok a jövőben anélkül frissíthetők, hogy a weboldal felépítése vagy stílusa sérülne.</li>
+        <li><strong>Mobil-első tervezés & Kiegyensúlyozott tördelés:</strong> Teljes körű okostelefon- és tablet-optimalizáció, érintésbarát gombok és automatikus tipográfiai tördeléskiegyenlítés.</li>
+        <li><strong>Infrastruktúra & Hosting:</strong> Git verziókövetés, Cloudflare Pages felhőhoszting és az egyedi domain név (<code>www.nyarizsolti.hu</code> / <code>nyarizsolti.hu</code>) rákötése ingyenes SSL/HTTPS tanúsítvánnyal.</li>
+    </ul>
+
+    <div class="section-title">2. Anyagok Átadása, Határidők és Együttműködés</div>
+    <p>2.1. A Megbízó a weboldalhoz szükséges anyagokat (fotók, logó, hivatalos elérhetőségek, pontos zenei és szolgáltatási leírások) a jelen szerződés aláírásától számított <strong><span class="placeholder-short" style="min-width: 50px;"></span> munkanapon belül</strong> bocsátja a Megbízott rendelkezésére.</p>
+    <p>2.2. A Megbízott a weboldal fejlesztését az anyagok és az előleg kézhezvételétől számított <strong><span class="placeholder-short" style="min-width: 50px;"></span> munkanapon belül</strong> elvégzi, és működő előnézeti (dev/preview) felületen bemutatja a Megbízónak.</p>
+    <p>2.3. <strong>Folyamatos finomhangolás:</strong> A Megbízó a bemutatott előnézeti verzióra szabadon, darabszámbeli korlátozás nélkül tehet észrevételeket és kérhet tartalmi/elrendezési módosításokat a 3. pontban rögzített időkeret terhére.</p>
+
+    <div class="page-break"></div>
+
+    <div class="section-title">3. Megbízási Díj, Munkaidő-keret és Fizetési Ütemezés</div>
+    <p>3.1. A Felek megállapodnak, hogy a weboldal komplett megvalósításának fix megbízási díja összesen:</p>
+    <p style="text-align: center; font-size: 12pt; font-weight: bold; margin: 10px 0;">
+        <span class="placeholder-line" style="min-width: 170px;"></span>,- Ft (azaz <span class="placeholder-line" style="min-width: 250px;"></span> forint).
+    </p>
+    <p>3.2. <strong>10 Órás Időkeret és 1 Éves Support:</strong> A fenti megbízási díj a Megbízott részéről egy <strong>10 (tíz) munkaórás</strong> fejlesztési, tervezési és rendelkezésre állási időkeretet foglal magában.</p>
+    <ul>
+        <li>Amennyiben a weboldal elkészítése és élesítése kevesebb időt vesz igénybe, úgy a fennmaradó órakeretet a Megbízó a szerződés aláírásától számított <strong>1 (egy) éven belül szabadon felhasználhatja supportként</strong> (pl. utólagos szövegfrissítések, új fotók feltöltése, szezonális módosítások, technikai tanácsadás).</li>
+        <li>A 10 órás keret felhasználását a Megbízott transzparensen naplózza. A keret kimerülése után kért további módosítások vagy fejlesztések díja: <strong>15.000 Ft / munkaóra</strong>.</li>
+    </ul>
+    <p>3.3. <strong>Fizetési ütemezés (50-50%):</strong></p>
+    <ul>
+        <li><strong>1. Részlet (50% Előleg):</strong> <span class="placeholder-line" style="min-width: 130px;"></span>,- Ft, amely a szerződés aláírásakor, a Megbízott által kiállított előlegszámla / díjbekérő alapján esedékes a munka megkezdése előtt.</li>
+        <li><strong>2. Részlet (50% Végszámla):</strong> <span class="placeholder-line" style="min-width: 130px;"></span>,- Ft, amely a weboldal Megbízó általi jóváhagyásakor, a domain élesítésének napján fizetendő.</li>
+    </ul>
+    <p>3.4. <strong>Elállási feltételek és előleg:</strong> A Felek rögzítik, hogy a Megbízott a munka megkezdésével azonnal egyedi szellemi munkát végez és dedikált kapacitást köt le. Ezért a Megbízó részéről történő esetleges elállás esetén a befizetett <strong>50% előleg nem térítendő vissza</strong>, az a Megbízottat bánatpénzként / az elvégzett előkészítő munkák ellenértékeként illeti meg.</p>
+
+    <div class="section-title">4. Forráskód, Tárhely és Üzemeltetési Modellek</div>
+    <p>4.1. <strong>Domain költségek:</strong> A weboldalhoz tartozó domain név (<code>nyarizsolti.hu</code>) regisztrációs és éves fenntartási díját közvetlenül a Megbízó fizeti a választott regisztrátornak.</p>
+    <p>4.2. A weboldal üzemeltetése a Felek választása szerint az alábbi két mód egyikén történhet:</p>
+    <ul>
+        <li><strong>A) Menedzselt Üzemeltetés (Ajánlott):</strong> Amennyiben a Megbízó nem igényli a Git repository és a Cloudflare felület közvetlen kezelését, a Megbízott a weboldalt saját Cloudflare Pages infrastruktúráján tartja és díjmentesen biztosítja a hostingot a 3.2. pont szerinti support keret terhére. A keret kimerülése után a Megbízott által végzett módosítások az alap óradíjon (15.000 Ft/óra) történnek.</li>
+        <li><strong>B) Kódátadás és Önálló Kezelés:</strong> A megbízási díj teljes kiegyenlítését követően a Megbízó bármikor jogosult kérni a teljes forráskód átadását (vagy a GitHub tárolóhoz való teljes hozzáférést). A kód átadása után a Megbízó a forráskóddal szabadon rendelkezik, azt bárhol hosztolhatja és tetszőleges harmadik féllel továbbfejlesztheti, ezzel egyidejűleg a Megbízott üzemeltetési felelőssége megszűnik.</li>
+    </ul>
+
+    <div class="section-title">5. Garancia és Referencia</div>
+    <p>5.1. A Megbízott a weboldal élesítését követő <strong>30 naptári napos garanciát</strong> vállal az esetlegesen felmerülő programozási vagy megjelenítési hibák soron kívüli, díjmentes javítására.</p>
+    <p>5.2. A Megbízott jogosult a weboldalt referenciaként feltüntetni saját szakmai portfóliójában (*Borbás Webdesign*).</p>
+
+    <div class="section-title">6. Záró Rendelkezések</div>
+    <p>6.1. Jelen szerződés mindkét Fél általi aláírásával lép hatályba. A szerződésben nem szabályozott kérdésekben a Polgári Törvénykönyv (Ptk.) megbízási és vállalkozási szerződésekre vonatkozó rendelkezései az irányadók.</p>
+
+    <div class="date-section">
+        Kelt: <span class="placeholder-line" style="min-width: 130px;">Budapest</span>, 2026. <span class="placeholder-short" style="min-width: 50px;"></span> hó <span class="placeholder-short" style="min-width: 40px;"></span> napján.
+    </div>
+
+    <table class="signatures-table">
+        <tr>
+            <td>
+                <div class="sig-line">Borbás Dániel</div>
+                <div class="sig-sub">Megbízott (Fejlesztő)</div>
+            </td>
+            <td>
+                <div class="sig-line">Nyári Zsolt</div>
+                <div class="sig-sub">Megbízó (Megrendelő)</div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
